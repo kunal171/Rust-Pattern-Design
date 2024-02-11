@@ -13,5 +13,5 @@ fn main() {
     // perform some action on the borrow to prevent rust from optimizing this
     //out of existence
     *y += 1;
-
+    println!("{}", (1..11).fold(0, |a, b| a + b));
 }
