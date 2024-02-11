@@ -1,0 +1,8 @@
+# Anti-patterns
+An anti-pattern is a solution to a “recurring problem that is usually ineffective and risks being highly counterproductive”. Just as valuable as knowing how to solve a problem, is knowing how not to solve it. Anti-patterns give us great counter-examples to consider relative to design patterns. Anti-patterns are not confined to code. For example, a process can be an anti-pattern, too.
+
+# Clone to satisfy the borrow checker
+
+## Description
+The borrow checker prevents Rust users from developing otherwise unsafe code by ensuring that either: only one mutable reference exists, or potentially many but all immutable references exist. If the code written does not hold true to these conditions, this anti-pattern arises when the developer resolves the compiler error by cloning the variable.
+
