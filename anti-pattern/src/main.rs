@@ -1,3 +1,21 @@
+
+mod nfs {
+    #[derive(Clone)]
+    pub(crate) struct AuthInfo(String); // NFS session management omitted
+}
+
+mod bootp {
+    pub(crate) struct AuthInfo(); // no authentication in bootp
+}
+enum AuthInfo {
+    Nfs(crate::nfs::AuthInfo),
+    Bootp(crate::bootp::AuthInfo),
+}
+
+struct FileDownloadRequest {
+    file_name: PathBuf,
+    authentication: AuthInfo,
+}
 fn main() {
     // define any variable
     let mut x = 5;
